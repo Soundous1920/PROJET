@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<div class="wrapper">
+    <form id="loginForm">
+        <h1>Login</h1>
+        <div class="input-box">
+            <input type="text" id="loginUsername" class="input" placeholder="Username" required>
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="loginPassword" class="input" placeholder="password" required>
+            <i class='bx bx-lock'></i>
+        </div>
+        <div class="remember-me">
+            <label> <input type="checkbox" name="remember" id="remember">Remember me</label>
+            <a class="forgot" href="#forgot">Forgot password?</a>
+        </div>
+        <div class="loader" id="loader" style="display: none;"></div>
+        <button class="btn" onclick="login(event)">Login</button>
+        <div class="register">
+            <p>Don't have an account?<a href="#" onclick="ShowRegister()">Register</a></p>
+        </div>
+    </form>
+    <form id="registerForm" style="display: none;">
+        <h1>Register</h1>
+        <div class="input-box">
+            <input type="text" id="fullname" class="input" placeholder="Full name" required>
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="email" id="email" class="input" placeholder="enter your email" required>
+            <i class='bx bx-envelope'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="registerPassword" class="input" placeholder="Enter a password" required>
+            <i class='bx bx-lock'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" id="confirmpassword" class="input" placeholder="confirm password" required>
+            <i class='bx bxs-check-shield'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" id="carid" class="input" placeholder="enter your car id" required maxlength="10" minlength="10">
+            <i class='bx bxs-car-garage'></i>
+        </div>
+        <div class="remember-me">
+            <label> <input type="checkbox" name="remember" id="remember">Remember me</label>
+        </div>
+        <div class="loader" id="registerLoader" style="display: none;"></div>
+        <button class="btn" onclick="register(event)">Sign up</button>
+        <div class="register">
+            <p>Already have an account?<a href="#" onclick="ShowLogin()">Log in</a></p>
+        </div>
+    </form>
+</div>
+
+<script src="../js/login.js"></script>
+
+<script>
+    function login(event) {
+        event.preventDefault(); //to prevent form submission
+
+        // Validation
+        var username = document.getElementById('loginUsername').value.trim();
+        var password = document.getElementById('loginPassword').value.trim();
+
+        if (username === "") {
+            alert("Please enter your username");
+            return;
+        }
+
+        if (password === "") {
+            alert("Please enter your password");
+            return;
+        }
+
+        //show loading spinner
+        document.getElementById("loader").style.display = "block";
+        setTimeout(function () {
+            //go to main page after 4 seconds
+            window.location.href = "../html/index.html";
+        }, 4000);
+    }
+
+    function register(event) {
+
+        event.preventDefault(); //to prevent form submission
+
+        // Validation
+        var fullname = document.getElementById('fullname').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var password = document.getElementById('registerPassword').value.trim();
+        var confirmpassword = document.getElementById('confirmpassword').value.trim();
+        var carid = document.getElementById('carid').value.trim();
+
+        if (fullname === "") {
+            alert("Please enter a full name for registration");
+            return;
+        }
+        function validateEmail(email) {
+    // Regular expression for validating email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+        if ( !validateEmail(email)) {
+            alert("Please enter a valid email");
+            return;
+        }
+
+
+        if (password === "") {
+            alert("Please enter a password for registration");
+            return;
+        }
+        if(confirmpassword!==password){
+            alert("password does not match");
+            return;
+        }
+        function validateIdLength(id, minLength, maxLength) {
+    var idLength = id.trim().length;
+    return idLength >= minLength && idLength <= maxLength;
+}
+        if (!validateIdLength(carid,10,10)) {
+            alert("Please enter a proper car id");
+            return;
+        }
+
+        //show loading spinner
+        document.getElementById("registerLoader").style.display = "block";
+        setTimeout(function () {
+            //go to main page after 4 seconds
+            window.location.href = "../html/index.html";
+        }, 4000);
+    }
+</script>
+</body>
+</html>
