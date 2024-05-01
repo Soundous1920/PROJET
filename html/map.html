@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Tracking Interface</title>
+  <link rel="stylesheet" href="../css/map.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Fugaz+One&family=Lilita+One&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><p class="logo-title">Trackify<span>ME</span></p></h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href=""">map</a>
+      <a href="#about">About</a>
+      <a href="#">history</a>
+      
+  </nav>
+  <img src="../images/user.jpeg" class="user-pic" >
+    
+  </header>
+
+  <div class="tab-content" id="map-tab">
+    <!-- Interactive map and vehicle details section -->
+  </div>
+
+  <div class="container tab-content" id="map-tab">
+    <div class="map-section">
+      <!-- Interactive map here -->
+      <div id="map"></div>
+      <div class="vehicle-info">
+        <h2>Vehicle Information</h2>
+        <div id="time">Time: </div>
+        <div id="date">Date: </div>
+        <div id="location">Location: </div>
+        <div id="altitude">Altitude: </div>
+      </div>
+    </div>
+    <div class="vehicle-details">
+      <!-- Additional vehicle details -->
+    </div>
+  </div>
+  
+
+  <script src="../js/map.js"></script>
+</body>
+</html>
