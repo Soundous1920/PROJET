@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body{
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+.container{
+    font-family: 'Montserrat', sans-serif;
+   display: flex;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 900px;
+    max-width: 100%;
+    min-height: 550px;
+}
+.container_modification{
+    padding: 0 40px;
+    position: relative;
+    overflow: hidden;
+    width: 410px;
+    max-width: 100%;
+    min-height: 500px;
+
+}
+.container_profile{
+    
+    margin-bottom: 2.5%;
+    background-color: #2C3531;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 410px;
+    max-width: 100%;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    min-height: 500px;
+}
+.image{ 
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 30%;
+    margin-left: 32%;
+    margin-right: 32%;
+   
+
+
+
+}
+
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+    
+}
+.changepfpbox{
+
+   
+   
+    margin-top: 13%;
+    margin-left: 28%;
+    margin-right: 28%;
+    position: relative;
+    overflow: hidden;
+    width: 180px;
+    max-width: 100%;
+    
+    min-height: 35px;
+
+}
+.btn{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #9FCCC0;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 15%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    
+    cursor: pointer;
+
+}
+
+
+
+
+.options {
+    position: relative;
+    margin-top: 30%;
+    list-style: none;
+    text-align: center; /* Center the list items */
+}
+.options li a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  .options li span:hover{
+    color: #9FCCC0;
+  }
+
+.options li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Add space between each list item */
+}
+
+.options li:not(:last-child) {
+    border-bottom: 1px solid #ccc; /* Add a line between each list item except the last one */
+    padding-bottom: 15px; /* Adjust spacing */
+}
+.bx-x{
+    align-items: right;
+    color: #2C3531;
+    font-size: 50px;
+
+}
+
+.bx-x:hover{
+    color: #9FCCC0;
+
+}
+.options i {
+    color: #2C3531;
+    font-size: 30px;
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.options span {
+    color: #2C3531;
+    font-size: 25px;
+}
+
+
+
+
+.change{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.change input{
+    background-color: #2c3531c7;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 10px;
+    width: 80%;
+    outline: none;
+    height: 50px;
+}
+input::placeholder{
+    color: #fff;
+}
+.change span{
+    margin-right:52%;
+    font-weight: 700;
+    font-size: 13px;
+}
+.change a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 4px;
+
+}
+.change a:hover{
+    color: #9FCCC0;
+}
+.change button{
+    background-color: #9FCCC0;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}

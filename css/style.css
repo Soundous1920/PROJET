@@ -15,11 +15,12 @@
         z-index: -1;
       }
       .logo-title{
+        cursor: default;
         color: white;
-        font-size: 35px;
+        font-size: 20px;
         font-weight: 700;
         margin: 20px;
-      margin-left: 50px;
+      margin-left: 40px;
       color: rgb(212, 211, 211);
       transition: 0.4s;
       font-family: "Fugaz One", sans-serif;
@@ -47,28 +48,72 @@
     font-family: "Russo One", sans-serif;
     color:#FFCA7A;
     text-align: center;
-    font-size: 100px;
+    font-size: 75px;
     padding: 180px;
+    cursor: default;
     padding-bottom: 20px;
   
     
 }
 .content p{
   color: #fff;
-  font-family: "Quicksand", sans-serif;
+  cursor: default;
+  font-family: "Poppins" , sans-serif;
   font-size: 25px;
+  font-weight: 550;
   padding-bottom: 20px;
   font-style: normal;
   text-align: center;
+}
+.icons{
+  display: flex;
+ padding: 12px;
+ margin-top: 3px;
+margin-left: 25%;
+ 
+
+}
+i{
+  color: #fff;
+  padding: 3px;
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+  color: #fff;
 }
 
 
     
 
     
+.nav{
+  display: flex;
+  background-color: #2c3531c9;
+  height: 60px;
+  width: 100%;
+}
+ul{
+  
+  margin-top: 2px;
+ margin-left: 25%;
 
+  display: flex;
+}
+.bar{
+  
+  color: #fff;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px;
+  font-family: "Poppins" , sans-serif;
+  
+  
+}
 
 .content button{
+  cursor: pointer;
   padding: 8px;
   width: 230px;
     border-radius: 10px;

@@ -18,32 +18,28 @@
   <body>
     <div class="sidebar">
       <div class="logo-details">
-        <i class="bx bxs-map-pin icon"></i>
+        <i class="bx bxs-map icon"></i>
         <div class="logo_name"><p>Trackify<span>ME</span></p></div>
         <i class="bx bx-menu" id="btn"></i>
       </div>
       <ul class="nav-list">
+       
         <li>
-          <i class="bx bx-search"></i>
-          <input type="text" placeholder="Search..." />
-          <span class="tooltip">Search</span>
-        </li>
-        <li>
-          <a href="#">
+          <a href="#" class="side_a" onclick="showHome()">
             <i class='bx bxs-home'></i>
             <span class="links_name">Home</span>
           </a>
           <span class="tooltip">Home</span>
         </li>
         <li>
-            <a href="#">
+            <a href="#" onclick="popvehi" class="side_a">
               <i class='bx bxs-car' ></i>
               <span class="links_name">Vehicles</span>
             </a>
             <span class="tooltip">Vehicles</span>
           </li>
         <li>
-          <a href="#">
+          <a href="#" class="side_a" onclick="showCurrent()">
             <i class='bx bxs-map-alt'></i>
             <span class="links_name">Current position</span>
           </a>
@@ -51,49 +47,82 @@
         </li>
        
         <li>
-            <a href="#">
+            <a href="#" class="side_a">
                 <i class='bx bx-trip'></i>
               <span class="links_name">tracing</span>
             </a>
             <span class="tooltip">tracing</span>
           </li>
           <li>
-            <a href="#">
+            <a href="#" class="side_a">
               <i class='bx bx-history'></i>
               <span class="links_name">History</span>
             </a>
             <span class="tooltip">History</span>
           </li>
         <li>
-          <a href="#">
+          <a href="#" class="side_a">
             <i class='bx bxs-help-circle' ></i>
             <span class="links_name">FAQ</span>
           </a>
           <span class="tooltip">FAQ</span>
         </li>
         <li>
-          <a href="#">
+          <a href="#" class="side_a">
             <i class='bx bxs-cog' ></i>
             <span class="links_name">Settings</span>
           </a>
           <span class="tooltip">Settings</span>
         </li>
-        <li>
+        
           
         <li class="profile">
           <div class="profile-details">
-            <img src="../images/user.jpeg" alt="profileImg" />
+            <img src="../images/user.jpeg" alt="profileImg"/>
             <div class="name_job">
-              <div class="name">full name</div>
+              <div class="name"><a href="">full name</a></div>
               
             </div>
           </div>
-          <i class="bx bx-log-out" id="log_out"></i>
+          <a href="index.html"><i class="bx bx-log-out" id="log_out"></i></a>
         </li>
       </ul>
     </div>
-    <section class="home-section">
-      <div id="map"></div>
+   
+    <section class="home-section" id="home">
+      <body>
+        <div class="top-part">
+            
+            <div class="vehicule">
+                <img src="../images/mazda-6-83283.jpg" alt="">
+              <p class="model">Vehicule model <span>Mazda</span></p>
+                  <p class="model">Vehicule Id <span>123 498 687</span></p>
+                <p class="model">Registration date <span>19/03/2024</span></p>
+               
+                <button class="edit">edit</button>
+                
+            </div>
+            <div class="selected">
+                <i class='bx bx-check-circle'></i>
+                <span>SELECTED</span>
+            </div>
+        </div>
+        <div class="botom-part">
+            <div id="maphome"></div>
+        </div>
+    </body>
+    <script>var map = L.map('maphome').setView([35.209928159847166, -0.6332289486794277], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    </script>
+    </section>
+    <section class="home-section" id="Currentposition">
+      <div id="map">
+       
+      
+</div>
     </section>
 
     <script src="../js/main.js"></script>

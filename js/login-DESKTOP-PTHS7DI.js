@@ -1,4 +1,3 @@
-
 const registerBtn = document.getElementById('register');
 const loginBtn = document.getElementById('login');
 const forgotPasswordBtn = document.getElementById('forgot-password');
@@ -16,14 +15,14 @@ forgotimage.style.display='none';
 
 function showLogin() {
     document.getElementById('loginForm').style.display = 'block';
-    document.getElementById('registe').style.display = 'block';
+    document.getElementById('register').style.display = 'block';
    
     document.getElementById('forgotPasswordForm').style.display = 'none';
     document.getElementById('forgotimage').style.display='none';
 }
 function showForgot() {
     document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('registe').style.display = 'none';
+    document.getElementById('register').style.display = 'none';
    
     document.getElementById('forgotPasswordForm').style.display = 'block';
     document.getElementById('forgotimage').style.display='block';
@@ -45,7 +44,7 @@ function login(event) {
     }
 
     // Send login request to backend
-    fetch('/login', {
+    fetch('/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -80,7 +79,7 @@ function sendResetLink(event) {
 
     // Display the reset message
     document.getElementById('resetEmail').textContent = email;
-    document.getElementById('resetEmail').style.textAlign="center";
+   
     document.getElementById('resetEmail').style.color="green";
     document.getElementById('resetMessage').style.display = 'block';
 
@@ -94,7 +93,9 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 function register() {
-   
+    if (password !== confirmPassword) {
+        document.getElementById("confirm").display="block";
+     }
     // Show loader
     document.getElementById("registerForm").display="none";
     document.getElementById("loader").style.display = "block";
@@ -105,7 +106,8 @@ function register() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmpassword").value;
-   
+    var carId = document.getElementById("carid").value;
+    var rememberMe = document.getElementById("remember").checked;
 
     // Validate form data (e.g., check if passwords match)
     if (password !== confirmPassword) {
@@ -117,7 +119,8 @@ function register() {
         fullName: fullName,
         email: email,
         password: password,
-       
+        carId: carId,
+        rememberMe: rememberMe
     };
 
     // Send registration data to backend

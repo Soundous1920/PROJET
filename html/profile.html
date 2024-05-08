@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>User Profile</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="profile">
+                <h2>User Details</h2>
+                <div class="profile-info">
+                    <div class="profile-image">
+                        <img src="avatar.jpg" alt="User Avatar">
+                    </div>
+                    <div class="profile-details">
+                        <h3 id="fullName">John Doe</h3>
+                        <p>Email: <span id="email">john@example.com</span></p>
+                        <p>Location: <span id="location">New York, USA</span></p>
+                        <p>Joined: <span id="joinedDate">January 1, 2023</span></p>
+                        <p>Bio: <span id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula leo nec justo pulvinar, quis gravida ligula pharetra. Integer auctor augue nec erat finibus ultrices.</span></p>
+                        <p>Social Media:
+                            <a href="#" id="facebookLink">Facebook</a>,
+                            <a href="#" id="twitterLink">Twitter</a>,
+                            <a href="#" id="linkedinLink">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="settings">
+                <h2>Settings</h2>
+                <form id="settingsForm">
+                    <label for="fullNameInput">Full Name:</label>
+                    <input type="text" id="fullNameInput" placeholder="Enter your full name">
+                    <label for="emailInput">Email:</label>
+                    <input type="email" id="emailInput" placeholder="Enter your email">
+                    <label for="locationInput">Location:</label>
+                    <input type="text" id="locationInput" placeholder="Enter your location">
+                    <label for="bioInput">Bio:</label>
+                    <textarea id="bioInput" rows="4" placeholder="Enter your bio"></textarea>
+                    <label for="facebookInput">Facebook:</label>
+                    <input type="text" id="facebookInput" placeholder="Enter your Facebook profile URL">
+                    <label for="twitterInput">Twitter:</label>
+                    <input type="text" id="twitterInput" placeholder="Enter your Twitter profile URL">
+                    <label for="linkedinInput">LinkedIn:</label>
+                    <input type="text" id="linkedinInput" placeholder="Enter your LinkedIn profile URL">
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="../css/profile.css"></script>
+</body>
+</html>

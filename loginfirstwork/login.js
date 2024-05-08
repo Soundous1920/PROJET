@@ -1,36 +1,3 @@
-
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
-const forgotPasswordBtn = document.getElementById('forgot-password');
-const container = document.getElementById('container');
-
-registerBtn.addEventListener('click', () => {
-    container.classList.add("active");
-});
-
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
-const forgotimage=document.getElementById('forgotimage');
-forgotimage.style.display='none';
-
-function showLogin() {
-    document.getElementById('loginForm').style.display = 'block';
-    document.getElementById('registe').style.display = 'block';
-   
-    document.getElementById('forgotPasswordForm').style.display = 'none';
-    document.getElementById('forgotimage').style.display='none';
-}
-function showForgot() {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('registe').style.display = 'none';
-   
-    document.getElementById('forgotPasswordForm').style.display = 'block';
-    document.getElementById('forgotimage').style.display='block';
-}
-
-
-
 function login(event) {
     event.preventDefault(); // Prevent form submission
 
@@ -63,7 +30,22 @@ function login(event) {
         alert("Login failed. Please try again.");
     });
 }
+function ShowRegister() {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+}
 
+function ShowLogin() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('forgotPassword').style.display = 'none';
+}
+// Function to show the Forgot Password section
+function showForgotPassword() {
+    document.getElementById('forgotPassword').style.display = 'block';
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'none';
+}
 
 // Function to send reset password link
 function sendResetLink(event) {
@@ -94,7 +76,9 @@ function validateEmail(email) {
     return emailRegex.test(email);
 }
 function register() {
-   
+    if (password !== confirmPassword) {
+        document.getElementById("confirm").display="block";
+     }
     // Show loader
     document.getElementById("registerForm").display="none";
     document.getElementById("loader").style.display = "block";
@@ -105,7 +89,8 @@ function register() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmpassword").value;
-   
+    var carId = document.getElementById("carid").value;
+    var rememberMe = document.getElementById("remember").checked;
 
     // Validate form data (e.g., check if passwords match)
     if (password !== confirmPassword) {
@@ -117,7 +102,8 @@ function register() {
         fullName: fullName,
         email: email,
         password: password,
-       
+        carId: carId,
+        rememberMe: rememberMe
     };
 
     // Send registration data to backend

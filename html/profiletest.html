@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/profiletest.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="container_profile">
+            <div class="image">
+                <img src="../images/user.jpeg" alt="profile picture" class="pfp">
+            </div>
+            <div class="changepfpbox">
+                
+                <button class="btn">Change</button>
+              
+            </div>
+        </div>
+        <div class="container_modification" id="modifications">
+           
+            <ul class="options">
+                <li>
+                    <a href="#" onclick="showChangename()">
+                        <i class='bx bxs-pencil'></i>
+                     <span class="links_name">Change full name</span>
+                    </a>
+                 </li>
+                <li>
+                   <a href="#" onclick="showChangeEmail()">
+                    <i class='bx bxs-envelope' ></i>
+                    <span class="links_name">Change email</span>
+                   </a>
+                </li>
+                
+                <li>
+                    <a href="#" onclick="showChangePass()">
+                        <i class='bx bxs-lock'></i>
+                    <span class="links_name">Change password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-car-mechanic'></i>
+                        <span class="links_name">Modify or add vehicles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                    </a>
+                </li>
+                
+                
+               
+            </ul>
+        </div>
+        <div class="container_modification change" id="Changename">
+            <span>New name</span>
+            <input type="text" placeholder="Enter your new name">
+            <a href="#" onclick="showProfileModifications()" >Go back</a>
+            <br>
+            <button>Change</button>
+            
+        </div>
+        <div class="container_modification change" id="Changepass">
+            <span>Password</span>
+            <input type="password" placeholder="Enter your password">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New password</span>
+            <input type="password" placeholder="Enter your new password">
+            <span>&nbsp;&nbsp;&nbsp;Confirmation</span>
+            <input type="password" placeholder="Confirm your new password">
+            <a href="#" onclick="showProfileModifications()"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go back</s></a>
+                <br>
+                <button>Change</button>
+
+        </div>
+        <div class="container_modification change" id="Changeemail">
+            <span>New email</span>
+            <input type="email" placeholder="Enter your new email">
+            <a href="#" onclick="showProfileModifications()" >Go back</a>
+            <br>
+            <button>Change</button>
+            
+        </div>
+
+       
+     
+        
+    </div>
+    <script>
+        const changepass=document.getElementById('Changepass');
+        const changeemail=document.getElementById('Changeemail');
+        const changename=document.getElementById('Changename');
+        
+        changename.style.display='none';
+        changeemail.style.display='none';
+        changepass.style.display='none';
+                function showChangeEmail(){
+ document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='flex';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='none';
+}
+function showChangePass(){
+    document.getElementById('Changepass').style.display='flex';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='none';
+
+}
+function showProfileModifications(){
+    document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='block';
+ document.getElementById('Changename').style.display='none';
+
+
+}
+function showChangename(){
+    document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='flex';
+
+}
+    </script>
+   
+    
+</body>
+</html>
