@@ -23,98 +23,44 @@ var map = L.map('map').setView([35.209928159847166, -0.6332289486794277], 13);
 }).addTo(map);
 var marker = L.marker([35.209928159847166, -0.6332289486794277]).addTo(map);
 
-
-
-
-
-function showProfile(){
-  document.getElementById('container').style.display='block';
-  document.getElementById('map').style.display='none';
-}
-function showProfile(){
-  document.getElementById('bx-x').style.display='none';
-  document.getElementById('map').style.display='block';
-}
-document.addEventListener("DOMContentLoaded", function() {
-  const vehiclesLink = document.querySelector('.nav-list li:nth-child(8) .name a');
-
-  vehiclesLink.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default behavior of the link
-      
-      // Create a div for the popup
-      const popup = document.createElement('div');
-      popup.classList.add('popup');
-      
-      // Add content to the popup
-      popup.innerHTML = `
-          <div class="popup-content">
-          <div class="pfpcontainer">
-        <div class="container_profile">
-            <div class="image">
-                <img src="../images/user.jpeg" alt="profile picture" class="pfp">
-            </div>
-            <div class="changepfpbox">
-                
-                <button class="pfpbtn">Change</button>
-              
-            </div>
-        </div>
-        <div class="pfpcontainer_modification">
-           
-            <ul class="options">
-                <li>
-                   <a href="#">
-                    <i class='bx bxs-envelope' ></i>
-                    <span class="links_name">Change email</span>
-                   </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-lock'></i>
-                    <span class="links_name">Change password</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="../html/index.html">
-                        <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class='bx bxs-help-circle'></i>
-                    <span class="links_name">FAQ</span>
-                    </a>
-                </li>
-                
-               
-            </ul>
-        </div>
+const changepass=document.getElementById('Changepass');
+        const changeemail=document.getElementById('Changeemail');
+        const changename=document.getElementById('Changename');
         
-    </div>
-    
-   
-    
-              <button class="close-popup">Close</button>
-          </div>
-          
-          </div>
-              <script src="../js/vehicules.js"></script>
-          </div>
-      `;
-      
-      // Append the popup to the body
-      document.body.appendChild(popup);
+        changename.style.display='none';
+        changeemail.style.display='none';
+        changepass.style.display='none';
+                function showChangeEmail(){
+ document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='flex';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='none';
+}
+function showChangePass(){
+    document.getElementById('Changepass').style.display='flex';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='none';
 
-      // Add event listener to close the popup
-      const closeButton = popup.querySelector('.close-popup');
-      closeButton.addEventListener('click', function() {
-          popup.remove();
-      });
-      
-  });
-});
+}
+function showProfileModifications(){
+    document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='block';
+ document.getElementById('Changename').style.display='none';
+
+
+}
+function showChangename(){
+    document.getElementById('Changepass').style.display='none';
+ document.getElementById('Changeemail').style.display='none';
+ document.getElementById('modifications').style.display='none';
+ document.getElementById('Changename').style.display='flex';
+
+}
+//end profile functions
+
+
 
 // js of vehicules
 document.addEventListener("DOMContentLoaded", function() {
@@ -141,79 +87,128 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//profile 
-document.addEventListener("DOMContentLoaded", function() {
-  const vehiclesLink = document.querySelector('.nav-list li:nth-child(2) a');
+const vehicle=document.getElementById('vehicles');
+vehicle.style.display='none';
 
-  vehiclesLink.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default behavior of the link
-      
-      // Create a div for the popup
-      const popup = document.createElement('div');
-      popup.classList.add('popup');
-      
-      // Add content to the popup
-      popup.innerHTML = `
-          <div class="popup-content">
-          <div class="container">
-          
-                  <div class="vehicule">
-                      <img src="../images/mazda-6-83283.jpg" alt="">
-                    <p class="model">Vehicule model <span>Mazda</span></p>
-                        <p class="model">Vehicule Id <span>123 498 687</span></p>
-                      <p class="model">Registration date <span>19/03/2024</span></p>
-                     <button class="modify">Modify</button>
-                      <button class="delete">Delete</button>
-                      
-                  </div>
-                  <div class="vehicule">
-                      <img src="../images/mazda-6-83283.jpg" alt="">
-                    <p class="model">Vehicule model <span>Mazda</span></p>
-                        <p class="model">Vehicule Id <span>123 498 687</span></p>
-                      <p class="model">Registration date <span>19/03/2024</span></p>
-                     <button class="modify">Modify</button>
-                      <button class="delete" onclick="delete()">Delete</button>
-  
-                      
-                  </div>
-                 
-                  <div class="vehicule">
-                      <img src="../images/mazda-6-83283.jpg" alt="">
-                    <p class="model">Vehicule model <span>Mazda</span></p>
-                        <p class="model">Vehicule Id <span>123 498 687</span></p>
-                      <p class="model">Registration date <span>19/03/2024</span></p>
-                     <button class="modify">Modify</button>
-                      <button class="delete">Delete</button>
-                      
-                  </div>
-                  
-              </div>
-              <button class="close-popup">Close</button>
-          </div>
-          
-          </div>
-              <script src="../js/vehicules.js"></script>
-          </div>
-      `;
-      
-      // Append the popup to the body
-      document.body.appendChild(popup);
-
-      // Add event listener to close the popup
-      const closeButton = popup.querySelector('.close-popup');
-      closeButton.addEventListener('click', function() {
-          popup.remove();
-      });
-      
-  });
-});
 const currentpos=document.getElementById('Currentposition');
 currentpos.style.display='none';
+const myprofile=document.getElementById('myprofile');
+myprofile.style.display='none';
+//home
 function showHome(){
     document.getElementById('home').style.display='block';
     document.getElementById('Currentposition').style.display='none';
+    document.getElementById('myprofile').style.display='none';
+    document.getElementById('vehicles').style.display='none';
+
 }
+//vehicles
+function showVehicles(){
+    document.getElementById('home').style.display='none';
+    document.getElementById('Currentposition').style.display='none';
+    document.getElementById('myprofile').style.display='none';
+    document.getElementById('vehicles').style.display='block';
+}
+//js of add new vehicule
+document.getElementById('add-vehicle-btn').addEventListener('click', function() {
+    document.getElementById('error').display= 'none';
+    document.getElementById('model').value = '';
+    document.getElementById('id').value = '';
+    document.getElementById('registration-date').value = '';
+
+    document.getElementById('add-vehicle-modal').style.display = 'block';
+   
+    document.getElementById('add-vehicle-modal').style.display = 'block';
+});
+
+document.getElementById('add-btn').addEventListener('click', function() {
+    var model = document.getElementById('model').value;
+    var id = document.getElementById('id').value;
+    var registrationDate = document.getElementById('registration-date').value;
+
+    if (model && id && registrationDate) {
+        var container = document.querySelector('.vcontainer');
+
+        var newVehicle = document.createElement('div');
+        newVehicle.classList.add('vehicule');
+        newVehicle.innerHTML = `
+            <img src="../images/mazda-6-83283.jpg" alt="">
+            <p class="model">Vehicle model <span>${model}</span></p>
+            <p class="model">Vehicle ID <span>${id}</span></p>
+            <p class="model">Registration date <span>${registrationDate}</span></p>
+            <button class="modify">Modify</button>
+            <button class="delete">Delete</button>
+        `;
+
+        container.appendChild(newVehicle);
+        document.getElementById('add-vehicle-modal').style.display = 'none';
+    } else {
+        document.getElementById('error').style.display = 'block';
+    
+    }
+});
+document.getElementById('quit-btn').addEventListener('click', function() {
+    document.getElementById('add-vehicle-modal').style.display = 'none';
+});
+
+// js of delete and modify vehicule 
+document.addEventListener("DOMContentLoaded", function() {
+    var deleteButtons = document.querySelectorAll(".delete");
+    deleteButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var vehicleDiv = button.parentElement;
+            vehicleDiv.remove();
+        });
+    });
+
+    var modifyButtons = document.querySelectorAll(".modify");
+    modifyButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var vehicleDiv = button.parentElement;
+            var modelSpan = vehicleDiv.querySelector(".model span");
+            var currentModel = modelSpan.textContent;
+            var modelInput = prompt("Enter new vehicle model:", currentModel);
+            if (modelInput !== null) {
+                modelSpan.textContent = modelInput;
+            }
+        });
+    });
+});
+
+
+
+//current position  
 function showCurrent(){
     document.getElementById('home').style.display='none';
     document.getElementById('Currentposition').style.display='block';
+    document.getElementById('myprofile').style.display='none';
+    document.getElementById('vehicles').style.display='none';
+
 }
+//profile functions
+function showProfile(){
+    document.getElementById('home').style.display='none';
+    document.getElementById('Currentposition').style.display='none';
+    document.getElementById('myprofile').style.display='block';
+    document.getElementById('vehicles').style.display='none';
+
+}
+//change profile picture
+// JavaScript code
+document.getElementById('changePfpBtn').addEventListener('click', function() {
+    // Trigger file input click event
+    document.getElementById('fileInput').click();
+});
+
+// Event listener for file input change
+document.getElementById('fileInput').addEventListener('change', function() {
+    const file = this.files[0]; // Get the selected file
+    if (file) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file); // Read the file as data URL
+        reader.onload = function() {
+            // Set the profile picture source to the selected image
+            document.querySelector('.pfp').src = reader.result;
+        }
+    }
+});
